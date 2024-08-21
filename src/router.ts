@@ -1,14 +1,11 @@
 import { Router } from "express";
 import { body } from 'express-validator'
-import { createProduct } from "./handers/products";
+import { createProduct, getProducts } from "./handers/products";
 import { handleInputErrors } from "./middleware";
 const router = Router()
 
 // Routing
-router.get('/', (req, res) => {
-    // Envía datos a la pantalla
-    res.send('Desde get')
-})
+router.get('/', getProducts)
 
 router.post('/',
     // Validación
