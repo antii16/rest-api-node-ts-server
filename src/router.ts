@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { body, param } from 'express-validator'
-import { createProduct, getProductById, getProducts, updatedProduct } from "./handers/products";
+import { createProduct, getProductById, getProducts, updateAvailability, updatedProduct } from "./handers/products";
 import { handleInputErrors } from "./middleware";
 const router = Router()
 
@@ -38,9 +38,7 @@ router.put('/:id',
     updatedProduct
 )
 
-router.patch('/', (req, res) => {
-    res.send('Desde patch')
-})
+router.patch('/:id', updateAvailability)
 
 router.delete('/', (req, res) => {
     res.send('Desde delete')
