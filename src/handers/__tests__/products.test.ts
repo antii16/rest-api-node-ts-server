@@ -29,7 +29,7 @@ describe('POST /api/products', ()=>{
     it('should validate that the price is greater than 0', async ()=>{
         const response = await request(server).post('/api/products').send({
             name: 'Monitor Curvo',
-            prince: 0
+            price: 0
         })
         expect(response.status).toBe(400)
         expect(response.body).toHaveProperty('errors')
@@ -42,7 +42,7 @@ describe('POST /api/products', ()=>{
     it('should validate that the price is a number and greater than 0', async ()=>{
         const response = await request(server).post('/api/products').send({
             name: 'Monitor Curvo',
-            prince: 'Hola'
+            price: 'Hola'
         })
         expect(response.status).toBe(400)
         expect(response.body).toHaveProperty('errors')
