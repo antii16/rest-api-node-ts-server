@@ -14,12 +14,7 @@ const options : swaggerJSDoc.Options = {
             title: 'REST API Node.js / Express / TypeScript',
             version: '1.0.0',
             description: 'API Docs for Products'
-        },
-        servers: [
-            {
-                url: 'https://rest-api-typescript-frontend-cyan.vercel.app', 
-            },
-        ],
+        }
     },
     apis: ['./src/router.ts']
 }
